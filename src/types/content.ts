@@ -29,10 +29,3 @@ export type PhotoAlbum = {
   coverImage: string;
   photos: GalleryPhoto[];
 };
-
-export type Track = {
-  id: string;
-  title: string;
-  artist: string;
-  src: string;
-};

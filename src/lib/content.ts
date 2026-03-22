@@ -1,8 +1,7 @@
 import eventsFile from "@/data/events.json";
 import bandledenFile from "@/data/bandleden.json";
 import fotosFile from "@/data/fotos.json";
-import tracksFile from "@/data/tracks.json";
-import type { BandMember, EventItem, PhotoAlbum, Track } from "@/types/content";
+import type { BandMember, EventItem, PhotoAlbum } from "@/types/content";
 
 export function getEvents(): EventItem[] {
   return eventsFile.events as EventItem[];
@@ -34,8 +33,4 @@ export function getPhotoAlbums(): PhotoAlbum[] {
 
 export function getAlbumByEventId(eventId: string): PhotoAlbum | undefined {
   return getPhotoAlbums().find((a) => a.eventId === eventId);
-}
-
-export function getTracks(): Track[] {
-  return tracksFile.tracks as Track[];
 }

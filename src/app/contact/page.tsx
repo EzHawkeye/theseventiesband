@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
@@ -20,12 +19,6 @@ export default function ContactPage() {
             Wil je ons boeken voor een feest, bruiloft, bedrijfsevent of festival?
             Laat een bericht achter — we antwoorden zo snel mogelijk.
           </p>
-          <Link
-            href="/events"
-            className="mt-8 inline-flex min-h-[3.5rem] items-center justify-center rounded-xl bg-terracotta px-8 text-xl font-semibold text-white shadow transition hover:bg-terracotta-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-mustard"
-          >
-            Eerst onze agenda bekijken
-          </Link>
         </header>
 
         <ContactForm />

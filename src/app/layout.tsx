@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces, Lexend } from "next/font/google";
 import { Footer } from "@/components/Footer";
-import { MusicPlayer } from "@/components/MusicPlayer";
 import { Navbar } from "@/components/Navbar";
 import { ScrollToTop } from "@/components/ScrollToTop";
-import { getTracks } from "@/lib/content";
 import "./globals.css";
 
 const display = Fraunces({
@@ -52,16 +50,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const tracks = getTracks();
-
   return (
     <html lang="nl" className={`${display.variable} ${body.variable} h-full`}>
       <body className="flex min-h-full flex-col antialiased">
         <Navbar />
-        <main className="relative flex-1 pb-44 md:pb-40">{children}</main>
+        <main className="relative flex-1">{children}</main>
         <Footer />
         <ScrollToTop />
-        <MusicPlayer tracks={tracks} />
       </body>
     </html>
   );
