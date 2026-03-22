@@ -9,18 +9,17 @@ function isValidEmail(value: string): boolean {
 }
 
 export async function POST(request: Request) {
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL;
+  const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
+  const CONTACT_TO_EMAIL =
+    process.env.CONTACT_TO_EMAIL || "kennethcars@live.be";
+  const RESEND_FROM_EMAIL =
+    process.env.RESEND_FROM_EMAIL?.trim() ||
+    "The Seventies Band <onboarding@resend.dev>";
 
-  if (!apiKey || !to) {
-    console.error("Missing RESEND_API_KEY or CONTACT_TO_EMAIL");
+  if (!RESEND_API_KEY) {
     return NextResponse.json(
-      {
-        ok: false,
-        error:
-          "E-mail is niet geconfigureerd. Controleer de omgevingsvariabelen op de server.",
-      },
-      { status: 503 },
+      { ok: false, error: "Missing API key" },
+      { status: 500 },
     );
   }
 
@@ -65,15 +64,11 @@ export async function POST(request: Request) {
     );
   }
 
-  const from =
-    process.env.RESEND_FROM_EMAIL?.trim() ||
-    "The New Seventies Band <onboarding@resend.dev>";
-
-  const resend = new Resend(apiKey);
+  const resend = new Resend(RESEND_API_KEY);
 
   const { data, error } = await resend.emails.send({
-    from,
-    to: [to],
+    from: RESEND_FROM_EMAIL,
+    to: [CONTACT_TO_EMAIL],
     replyTo: email,
     subject: SUBJECT,
     html: buildContactEmailHtml({ name, email, message }),

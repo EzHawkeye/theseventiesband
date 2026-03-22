@@ -44,11 +44,15 @@ export function ContactForm() {
       };
 
       if (!res.ok || !payload.ok) {
+        let message =
+          payload.error ??
+          "Verzenden mislukt. Controleer je internetverbinding en probeer opnieuw.";
+        if (message === "Missing API key") {
+          message = "Verzenden mislukt. Probeer het later opnieuw.";
+        }
         setFeedback({
           kind: "error",
-          message:
-            payload.error ??
-            "Verzenden mislukt. Controleer je internetverbinding en probeer opnieuw.",
+          message,
         });
         return;
       }
