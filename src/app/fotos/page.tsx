@@ -5,7 +5,7 @@ import { getPhotoAlbums } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Foto’s",
   description:
-    "Fotogalerij van The Seventies Band, per optreden. Open een album om alle foto’s te zien.",
+    "Echte sfeerbeelden van onze optredenen, ter plekke genomen — geen stockfoto’s. Per avond een apart album.",
 };
 
 export default function PhotosIndexPage() {
@@ -18,8 +18,9 @@ export default function PhotosIndexPage() {
           Foto’s
         </h1>
         <p className="mt-4 text-xl leading-relaxed text-ink-muted md:text-2xl">
-          Kies een optreden om alleen die foto’s te bekijken. Nieuwe albums voeg
-          je toe in{" "}
+          Hier zie je beelden van de avonden zelf — niet om je uit te nodigen,
+          maar om de sfeer te tonen zoals die was. Kies een optreden om dat
+          album te openen. Nieuwe albums voeg je toe in{" "}
           <code className="rounded bg-cream-dark px-2 py-0.5 text-lg text-ink">
             src/data/fotos.json
           </code>

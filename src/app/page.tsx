@@ -92,8 +92,9 @@ export default function HomePage() {
             Foto’s van het podium
           </h2>
           <p className="mt-3 max-w-2xl text-xl text-ink-muted">
-            Sfeerbeelden per optreden. Open een album om alle foto’s van dat
-            event te zien.
+            Echte foto’s genomen tijdens onze optredenen — geen stockbeelden.
+            Open een album om de sfeer van die avond te zien (niet als
+            uitnodiging; voor komende data zie optredens).
           </p>
           <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {albums.map((album) => (

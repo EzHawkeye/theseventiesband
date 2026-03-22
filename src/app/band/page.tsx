@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { MemberCard } from "@/components/MemberCard";
 import { getMembers } from "@/lib/content";
 
@@ -18,11 +19,18 @@ export default function BandPage() {
           De band
         </h1>
         <p className="mt-4 text-xl leading-relaxed text-ink-muted md:text-2xl">
-          Vijf muzikanten, één missie: jou laten meezingen en dansen. Pas
-          foto’s en teksten aan in{" "}
+          Vijf muzikanten, één missie: jou laten meezingen en dansen. Hieronder
+          staan portretfoto’s van de leden (in{" "}
           <code className="rounded bg-cream-dark px-2 py-0.5 text-lg text-ink">
-            src/data/bandleden.json
+            bandleden.json
           </code>
+          ). Beelden van echte optredenen — ter plekke genomen — vind je onder{" "}
+          <Link
+            href="/fotos"
+            className="font-semibold text-terracotta underline-offset-2 hover:underline"
+          >
+            Foto’s
+          </Link>
           .
         </p>
       </header>

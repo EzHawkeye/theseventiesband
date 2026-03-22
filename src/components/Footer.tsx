@@ -42,9 +42,10 @@ export function Footer() {
             <li>
               <Link
                 href="/fotos"
+                title="Beelden genomen tijdens onze optredenen — geen uitnodiging, wel herinneringen aan de avond"
                 className="text-terracotta underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-mustard"
               >
-                Foto’s
+                Foto’s (sfeer)
               </Link>
             </li>
           </ul>

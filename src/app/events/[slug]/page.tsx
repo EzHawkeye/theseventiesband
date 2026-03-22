@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getEventBySlug, getEvents } from "@/lib/content";
+import {
+  getAlbumByEventId,
+  getEventBySlug,
+  getEvents,
+} from "@/lib/content";
+import { isEventPast } from "@/lib/event-utils";
 import { remoteImageProps } from "@/lib/remote-image";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -36,6 +41,8 @@ export default async function EventDetailPage({ params }: Props) {
   const formatted = dateFmt.format(new Date(event.date));
   const headerImageSrc =
     "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&h=675&fit=crop";
+  const past = isEventPast(event);
+  const photoAlbum = getAlbumByEventId(event.id);
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-12 md:px-6 md:py-16">
@@ -45,6 +52,26 @@ export default async function EventDetailPage({ params }: Props) {
       >
         ← Terug naar alle optredens
       </Link>
+
+      {past ? (
+        <div className="mt-6 rounded-2xl border-2 border-olive/45 bg-olive/12 p-5 text-lg text-ink md:text-xl">
+          <p className="font-display text-xl font-bold text-ink md:text-2xl">
+            Dit optreden vond al plaats
+          </p>
+          <p className="mt-2 leading-relaxed text-ink-muted">
+            Onderstaande tekst is de oorspronkelijke aankondiging (archief). Dit
+            is geen uitnodiging om nog te komen — voor een volgende keer zie je
+            onze{" "}
+            <Link
+              href="/events"
+              className="font-semibold text-terracotta underline-offset-2 hover:underline"
+            >
+              komende optredens
+            </Link>
+            .
+          </p>
+        </div>
+      ) : null}
 
       <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-3xl border-2 border-ink/10 shadow-lg">
         <Image
@@ -75,22 +102,49 @@ export default async function EventDetailPage({ params }: Props) {
       </div>
 
       <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-        {event.ticketUrl ? (
-          <a
-            href={event.ticketUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-[3.5rem] items-center justify-center rounded-xl bg-terracotta px-8 text-xl font-semibold text-white shadow transition hover:bg-terracotta-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-mustard"
-          >
-            Tickets of info
-          </a>
-        ) : null}
-        <Link
-          href="/contact"
-          className="inline-flex min-h-[3.5rem] items-center justify-center rounded-xl border-2 border-terracotta bg-card px-8 text-xl font-semibold text-terracotta transition hover:bg-cream-dark focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-mustard"
-        >
-          Vragen over dit optreden?
-        </Link>
+        {past ? (
+          <>
+            {photoAlbum ? (
+              <Link
+                href={`/fotos/${event.id}`}
+                className="inline-flex min-h-[3.5rem] items-center justify-center rounded-xl bg-terracotta px-8 text-xl font-semibold text-white shadow transition hover:bg-terracotta-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-mustard"
+              >
+                Sfeerbeelden van deze avond
+              </Link>
+            ) : null}
+            <Link
+              href="/events"
+              className="inline-flex min-h-[3.5rem] items-center justify-center rounded-xl border-2 border-terracotta bg-card px-8 text-xl font-semibold text-terracotta transition hover:bg-cream-dark focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-mustard"
+            >
+              Komende optredens
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex min-h-[3.5rem] items-center justify-center rounded-xl border-2 border-ink/15 bg-card px-8 text-xl font-semibold text-ink transition hover:bg-cream-dark focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-mustard"
+            >
+              Nieuwe boeking of vraag?
+            </Link>
+          </>
+        ) : (
+          <>
+            {event.ticketUrl ? (
+              <a
+                href={event.ticketUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[3.5rem] items-center justify-center rounded-xl bg-terracotta px-8 text-xl font-semibold text-white shadow transition hover:bg-terracotta-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-mustard"
+              >
+                Tickets of info
+              </a>
+            ) : null}
+            <Link
+              href="/contact"
+              className="inline-flex min-h-[3.5rem] items-center justify-center rounded-xl border-2 border-terracotta bg-card px-8 text-xl font-semibold text-terracotta transition hover:bg-cream-dark focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-mustard"
+            >
+              Vragen over dit optreden?
+            </Link>
+          </>
+        )}
       </div>
     </article>
   );

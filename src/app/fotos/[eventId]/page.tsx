@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!album) return { title: "Album niet gevonden" };
   return {
     title: `Foto’s — ${album.eventTitle}`,
-    description: `Fotogalerij: ${album.eventTitle}.`,
+    description: `Sfeerbeelden genomen tijdens het optreden “${album.eventTitle}” — geen stockfoto’s.`,
   };
 }
 
@@ -56,28 +56,35 @@ export default async function AlbumPhotosPage({ params }: Props) {
 
       <article className={`mt-8 ${sectionClass}`}>
         <header className="max-w-3xl">
-          <h1 className="font-display text-4xl font-bold text-ink md:text-5xl">
+          <p className="text-lg font-semibold uppercase tracking-wide text-terracotta md:text-xl">
+            Sfeerbeelden van de avond zelf
+          </p>
+          <h1 className="mt-2 font-display text-4xl font-bold text-ink md:text-5xl">
             {album.eventTitle}
           </h1>
+          <p className="mt-4 text-xl leading-relaxed text-ink-muted md:text-2xl">
+            Deze foto’s zijn ter plekke gemaakt tijdens het optreden — geen
+            stockbeelden en geen uitnodiging om nog te komen: het gaat om echte
+            herinneringen aan die avond.
+          </p>
           {event ? (
-            <div className="mt-4 space-y-2 text-xl text-ink-muted md:text-2xl">
+            <div className="mt-6 space-y-3 rounded-2xl border-2 border-cream-dark bg-card/80 p-5 text-lg text-ink md:text-xl">
               <p className="font-semibold text-olive">
                 {dateFmt.format(new Date(event.date))} · {event.time}
               </p>
-              <p>{event.location}</p>
-              <p className="leading-relaxed">{event.shortDescription}</p>
+              <p className="text-ink-muted">{event.location}</p>
               <p>
                 <Link
                   href={`/events/${event.slug}`}
                   className="font-semibold text-terracotta underline-offset-2 hover:underline"
                 >
-                  Meer over dit optreden
+                  Achtergrond over deze avond (aankondiging / archief)
                 </Link>
               </p>
             </div>
           ) : (
-            <p className="mt-4 text-xl text-ink-muted md:text-2xl">
-              Foto’s van dit optreden.
+            <p className="mt-6 text-xl text-ink-muted md:text-2xl">
+              Foto’s genomen tijdens dit optreden.
             </p>
           )}
         </header>

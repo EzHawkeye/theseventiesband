@@ -4,10 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-const links = [
+const links: { href: string; label: string; title?: string }[] = [
   { href: "/", label: "Home" },
   { href: "/events", label: "Optredens" },
-  { href: "/fotos", label: "Foto’s" },
+  {
+    href: "/fotos",
+    label: "Foto’s",
+    title:
+      "Echte sfeerbeelden van onze optredenen — niet bedoeld als uitnodiging voor voorbije avonden",
+  },
   { href: "/band", label: "Band" },
   { href: "/contact", label: "Contact" },
 ];
@@ -42,13 +47,18 @@ export function Navbar() {
           className="hidden items-center gap-1 md:flex"
           aria-label="Hoofdmenu"
         >
-          {links.map(({ href, label }) => {
+          {links.map(({ href, label, title }) => {
             const active =
               href === "/"
                 ? pathname === "/"
                 : pathname.startsWith(href);
             return (
-              <Link key={href} href={href} className={linkClass(active)}>
+              <Link
+                key={href}
+                href={href}
+                className={linkClass(active)}
+                title={title}
+              >
                 {label}
               </Link>
             );
@@ -74,7 +84,7 @@ export function Navbar() {
           aria-label="Mobiel menu"
         >
           <div className="mx-auto flex max-w-6xl flex-col gap-2 pt-2">
-            {links.map(({ href, label }) => {
+            {links.map(({ href, label, title }) => {
               const active =
                 href === "/"
                   ? pathname === "/"
@@ -84,6 +94,7 @@ export function Navbar() {
                   key={href}
                   href={href}
                   className={linkClass(active)}
+                  title={title}
                   onClick={() => setOpen(false)}
                 >
                   {label}

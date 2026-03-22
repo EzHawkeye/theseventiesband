@@ -27,7 +27,9 @@ export function AlbumLinkCard({ album }: Props) {
         <p className="font-display text-xl font-bold text-ink group-hover:text-terracotta md:text-2xl">
           {album.eventTitle}
         </p>
-        <p className="mt-1 text-lg text-terracotta">Bekijk album →</p>
+        <p className="mt-1 text-lg text-terracotta">
+          Bekijk sfeerbeelden →
+        </p>
       </div>
     </Link>
   );

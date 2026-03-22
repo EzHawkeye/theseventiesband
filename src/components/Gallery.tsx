@@ -47,7 +47,7 @@ export function Gallery({ photos, albumTitle }: Props) {
   if (photos.length === 0) {
     return (
       <p className="text-lg text-ink-muted">
-        Nog geen foto’s voor dit optreden.
+        Nog geen beelden toegevoegd voor deze avond.
       </p>
     );
   }

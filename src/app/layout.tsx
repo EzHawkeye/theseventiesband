@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | The Seventies Band",
   },
   description:
-    "Coverband met live muziek uit de jaren 70. Optredens, foto’s, bandleden en boekingen — overzichtelijk en warm in retrostijl.",
+    "Coverband met live muziek uit de jaren 70. Optredens, echte sfeerfoto’s van de avonden zelf (geen stock), band en boekingen — overzichtelijk en warm in retrostijl.",
   keywords: [
     "coverband",
     "jaren 70",
