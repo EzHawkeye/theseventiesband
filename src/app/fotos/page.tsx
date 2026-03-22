@@ -5,7 +5,7 @@ import { getPhotoAlbums } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Foto’s",
   description:
-    "Echte sfeerbeelden van onze optredenen, ter plekke genomen — geen stockfoto’s. Per avond een apart album.",
+    "Albums om ná elk optreden sfeerbeelden te tonen — ter plekke genomen, geen stock. Per avond een apart album.",
 };
 
 export default function PhotosIndexPage() {
@@ -18,9 +18,10 @@ export default function PhotosIndexPage() {
           Foto’s
         </h1>
         <p className="mt-4 text-xl leading-relaxed text-ink-muted md:text-2xl">
-          Hier zie je beelden van de avonden zelf — niet om je uit te nodigen,
-          maar om de sfeer te tonen zoals die was. Kies een optreden om dat
-          album te openen. Nieuwe albums voeg je toe in{" "}
+          Elk album is bedoeld om <strong className="font-semibold text-ink">ná</strong>{" "}
+          het optreden sfeerbeelden te tonen — niet als uitnodiging, maar als
+          impressie van wat er gebeurde. Kies een avond om het album te openen.
+          Nieuwe albums voeg je toe in{" "}
           <code className="rounded bg-cream-dark px-2 py-0.5 text-lg text-ink">
             src/data/fotos.json
           </code>

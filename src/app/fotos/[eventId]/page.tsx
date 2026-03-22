@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!album) return { title: "Album niet gevonden" };
   return {
     title: `Foto’s — ${album.eventTitle}`,
-    description: `Sfeerbeelden genomen tijdens het optreden “${album.eventTitle}” — geen stockfoto’s.`,
+    description: `Na het optreden: sfeerbeelden van “${album.eventTitle}”, ter plekke genomen — geen stockfoto’s.`,
   };
 }
 
@@ -57,29 +57,35 @@ export default async function AlbumPhotosPage({ params }: Props) {
       <article className={`mt-8 ${sectionClass}`}>
         <header className="max-w-3xl">
           <p className="text-lg font-semibold uppercase tracking-wide text-terracotta md:text-xl">
-            Sfeerbeelden van de avond zelf
+            Na het optreden online
           </p>
           <h1 className="mt-2 font-display text-4xl font-bold text-ink md:text-5xl">
             {album.eventTitle}
           </h1>
           <p className="mt-4 text-xl leading-relaxed text-ink-muted md:text-2xl">
-            Deze foto’s zijn ter plekke gemaakt tijdens het optreden — geen
-            stockbeelden en geen uitnodiging om nog te komen: het gaat om echte
-            herinneringen aan die avond.
+            Dit album is bedoeld om <strong className="font-semibold text-ink">ná</strong>{" "}
+            de avond beelden te tonen die we ter plekke gemaakt hebben — geen
+            stockfoto’s en geen uitnodiging: puur wat er op het podium en in de
+            zaal gebeurde.
           </p>
           {event ? (
             <div className="mt-6 space-y-3 rounded-2xl border-2 border-cream-dark bg-card/80 p-5 text-lg text-ink md:text-xl">
+              <p className="text-sm font-semibold uppercase tracking-wide text-ink-muted">
+                Waar &amp; wanneer (dit optreden)
+              </p>
               <p className="font-semibold text-olive">
                 {dateFmt.format(new Date(event.date))} · {event.time}
               </p>
               <p className="text-ink-muted">{event.location}</p>
-              <p>
+              <p className="border-t border-cream-dark pt-3 text-base text-ink-muted md:text-lg">
+                De aankondigingstekst en tickets staan alleen bij{" "}
                 <Link
-                  href={`/events/${event.slug}`}
+                  href="/events"
                   className="font-semibold text-terracotta underline-offset-2 hover:underline"
                 >
-                  Achtergrond over deze avond (aankondiging / archief)
-                </Link>
+                  Optredens
+                </Link>{" "}
+                — hier houden we het bij de foto’s van deze avond.
               </p>
             </div>
           ) : (

@@ -95,11 +95,42 @@ export default async function EventDetailPage({ params }: Props) {
         {event.location}
       </p>
 
-      <div className="mt-8 space-y-6 text-xl leading-relaxed text-ink md:text-2xl">
-        {event.fullDescription.split("\n").map((para, i) => (
-          <p key={i}>{para}</p>
-        ))}
-      </div>
+      {!past && photoAlbum ? (
+        <p className="mt-6 rounded-xl border border-mustard/45 bg-mustard/15 px-4 py-4 text-lg leading-relaxed text-ink md:text-xl">
+          <strong className="font-semibold text-ink">Foto’s horen bij ná de avond.</strong>{" "}
+          De aankondiging hieronder is voor wie wil komen. Beelden van het
+          optreden zelf verschijnen na afloop in het album onder{" "}
+          <Link
+            href={`/fotos/${event.id}`}
+            className="font-semibold text-terracotta underline-offset-2 hover:underline"
+          >
+            Foto’s → {event.title}
+          </Link>
+          .
+        </p>
+      ) : null}
+
+      {past ? (
+        <div className="mt-8 rounded-2xl border-2 border-dashed border-ink/15 bg-cream-dark/40 p-6 md:p-8">
+          <h2 className="font-display text-2xl font-bold text-ink md:text-3xl">
+            Oorspronkelijke aankondiging (archief)
+          </h2>
+          <p className="mt-2 text-lg text-ink-muted md:text-xl">
+            Dit was de tekst vóór het concert — niet meer geldig als uitnodiging.
+          </p>
+          <div className="mt-6 space-y-6 text-xl leading-relaxed text-ink md:text-2xl">
+            {event.fullDescription.split("\n").map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className="mt-8 space-y-6 text-xl leading-relaxed text-ink md:text-2xl">
+          {event.fullDescription.split("\n").map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+        </div>
+      )}
 
       <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
         {past ? (
