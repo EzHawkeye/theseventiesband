@@ -36,6 +36,7 @@ export function ContactForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
+        cache: "no-store",
       });
 
       const payload = (await res.json()) as {
