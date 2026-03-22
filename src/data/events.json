@@ -1,0 +1,48 @@
+{
+  "events": [
+    {
+      "id": "zomerpark-2025",
+      "slug": "zomerpark-2025",
+      "title": "Zomer in het Park",
+      "date": "2025-07-12",
+      "time": "20:00",
+      "location": "Stadspark, Gent",
+      "shortDescription": "Openluchtconcert met de grootste hits uit de jaren 70. Gratis toegang, iedereen welkom!",
+      "fullDescription": "Kom genieten van een avond vol herkenbare klassiekers onder de sterren. We spelen van disco tot rock en van pop tot soul. Neuw een picknickdeken mee en zing mee met nummers die iedereen kent. Het terrein is rolstoeltoegankelijk en er zijn drank- en snackstanden in de buurt.",
+      "ticketUrl": "https://example.com/tickets/zomerpark"
+    },
+    {
+      "id": "retro-night-2025",
+      "slug": "retro-night-2025",
+      "title": "Retro Night Live",
+      "date": "2025-08-23",
+      "time": "21:30",
+      "location": "Cultuurcentrum De Factorij, Antwerpen",
+      "shortDescription": "Een intieme clubavond met dansbare hits en lichtshow in retrostijl.",
+      "fullDescription": "Voor deze avond trekken we onze mooiste outfits aan en brengen we de sfeer van de seventies discotheek naar het podium. Verwacht een mix van disco, funk en rock uit de jaren 70. Parkeren is mogelijk op het plein ernaast; reserveren aanbevolen.",
+      "ticketUrl": "https://example.com/tickets/retro-night"
+    },
+    {
+      "id": "dorpsfeest-2025",
+      "slug": "dorpsfeest-2025",
+      "title": "Dorpsfeest Sint-Joris",
+      "date": "2025-09-06",
+      "time": "19:00",
+      "location": "Gemeenteplein, Sint-Joris",
+      "shortDescription": "Traditioneel dorpsfeest met live muziek voor jong en oud.",
+      "fullDescription": "We sluiten de feestdag af op het plein. Het programma is opgebouwd rond meezingers en rustige momenten voor wie even wil zitten. Bij regen verhuizen we naar de feesttent achter het gemeentehuis.",
+      "ticketUrl": ""
+    },
+    {
+      "id": "bedrijfsfeest-demo",
+      "slug": "bedrijfsfeest-demo",
+      "title": "Privé: Bedrijfsfeest (gesloten)",
+      "date": "2025-10-18",
+      "time": "22:00",
+      "location": "Op locatie (Brussel)",
+      "shortDescription": "Gesloten optreden — geen publiek.",
+      "fullDescription": "Dit is een besloten bedrijfsfeest. Wil je ons ook op jouw event? Neem contact op via de contactpagina voor beschikbaarheid en prijzen.",
+      "ticketUrl": ""
+    }
+  ]
+}

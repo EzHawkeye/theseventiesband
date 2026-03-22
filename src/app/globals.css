@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #fff8f0;
+  --cream-dark: #f3e8d8;
+  --terracotta: #c45c4e;
+  --terracotta-hover: #a84a3e;
+  --mustard: #e8b923;
+  --olive: #5a6b4d;
+  --plum: #7a6b8c;
+  --ink: #2c241c;
+  --ink-muted: #5c5248;
+  --card: #ffffff;
+  --ring: #e8b923;
+}
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-cream-dark: var(--cream-dark);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-hover: var(--terracotta-hover);
+  --color-mustard: var(--mustard);
+  --color-olive: var(--olive);
+  --color-plum: var(--plum);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-card: var(--card);
+  --color-ring-brand: var(--ring);
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-body: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1.25rem;
+  }
+}
+
+/* Subtle retro grid for hero areas */
+.bg-retro-grid {
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(232, 185, 35, 0.12) 0%,
+      rgba(196, 92, 78, 0.1) 50%,
+      rgba(122, 107, 140, 0.12) 100%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 24px,
+      rgba(44, 36, 28, 0.04) 24px,
+      rgba(44, 36, 28, 0.04) 25px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 24px,
+      rgba(44, 36, 28, 0.04) 24px,
+      rgba(44, 36, 28, 0.04) 25px
+    );
+}

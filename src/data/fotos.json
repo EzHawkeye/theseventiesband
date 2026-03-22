@@ -1,0 +1,61 @@
+{
+  "albums": [
+    {
+      "eventId": "zomerpark-2025",
+      "eventTitle": "Zomer in het Park",
+      "coverImage": "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&h=600&fit=crop",
+      "photos": [
+        {
+          "src": "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=1200&h=800&fit=crop",
+          "alt": "Publiek tijdens Zomer in het Park"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&h=800&fit=crop",
+          "alt": "Podium met lichten"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1429963228381-0f2dd51ca3d1?w=1200&h=800&fit=crop",
+          "alt": "Concert sfeer buiten"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1200&h=800&fit=crop",
+          "alt": "Muzikanten op het podium"
+        }
+      ]
+    },
+    {
+      "eventId": "retro-night-2025",
+      "eventTitle": "Retro Night Live",
+      "coverImage": "https://images.unsplash.com/photo-1571266028243-e4a3c8e8b0b8?w=800&h=600&fit=crop",
+      "photos": [
+        {
+          "src": "https://images.unsplash.com/photo-1571266028243-e4a3c8e8b0b8?w=1200&h=800&fit=crop",
+          "alt": "Retro lichtshow in de zaal"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1540039155733-5bb30b53aa4a?w=1200&h=800&fit=crop",
+          "alt": "Publiek danst mee"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&h=800&fit=crop",
+          "alt": "Live optreden close-up"
+        }
+      ]
+    },
+    {
+      "eventId": "dorpsfeest-2025",
+      "eventTitle": "Dorpsfeest Sint-Joris",
+      "coverImage": "https://images.unsplash.com/photo-1528605248644-c14be6e687e3?w=800&h=600&fit=crop",
+      "photos": [
+        {
+          "src": "https://images.unsplash.com/photo-1528605248644-c14be6e687e3?w=1200&h=800&fit=crop",
+          "alt": "Feest op het dorpsplein"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=1200&h=800&fit=crop",
+          "alt": "Band en publiek"
+        }
+      ]
+    }
+  ]
+}
