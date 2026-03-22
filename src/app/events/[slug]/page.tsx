@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getEventBySlug, getEvents } from "@/lib/content";
+import { remoteImageProps } from "@/lib/remote-image";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -33,6 +34,8 @@ export default async function EventDetailPage({ params }: Props) {
   if (!event) notFound();
 
   const formatted = dateFmt.format(new Date(event.date));
+  const headerImageSrc =
+    "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&h=675&fit=crop";
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-12 md:px-6 md:py-16">
@@ -45,12 +48,13 @@ export default async function EventDetailPage({ params }: Props) {
 
       <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-3xl border-2 border-ink/10 shadow-lg">
         <Image
-          src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&h=675&fit=crop"
+          src={headerImageSrc}
           alt=""
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, 48rem"
           priority
+          {...remoteImageProps(headerImageSrc)}
         />
       </div>
 

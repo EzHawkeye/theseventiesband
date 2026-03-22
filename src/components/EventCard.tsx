@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { remoteImageProps } from "@/lib/remote-image";
 import type { EventItem } from "@/types/content";
 
 const dateFmt = new Intl.DateTimeFormat("nl-BE", {
@@ -31,6 +32,7 @@ export function EventCard({
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, 33vw"
+          {...remoteImageProps(imageSrc)}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/50 to-transparent" />
         <p className="absolute bottom-3 left-4 right-4 font-display text-2xl font-bold text-white drop-shadow md:text-3xl">

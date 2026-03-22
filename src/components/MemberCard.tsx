@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { remoteImageProps } from "@/lib/remote-image";
 import type { BandMember } from "@/types/content";
 
 type Props = {
@@ -15,6 +16,7 @@ export function MemberCard({ member }: Props) {
           fill
           className="object-cover"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          {...remoteImageProps(member.photo)}
         />
       </div>
       <div className="flex flex-1 flex-col gap-2 p-5 md:p-6">

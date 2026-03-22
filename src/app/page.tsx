@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { EventCard } from "@/components/EventCard";
 import { getPhotoAlbums, getUpcomingEvents } from "@/lib/content";
+import { remoteImageProps } from "@/lib/remote-image";
 
 export default function HomePage() {
   const upcoming = getUpcomingEvents().slice(0, 3);
@@ -107,6 +108,7 @@ export default function HomePage() {
                       fill
                       className="object-cover transition duration-300 group-hover:scale-105"
                       sizes="(max-width: 640px) 100vw, 33vw"
+                      {...remoteImageProps(album.coverImage)}
                     />
                   </div>
                   <div className="p-4">

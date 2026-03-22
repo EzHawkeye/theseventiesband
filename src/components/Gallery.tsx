@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import { remoteImageProps } from "@/lib/remote-image";
 import type { GalleryPhoto } from "@/types/content";
 
 type Props = {
@@ -67,6 +68,7 @@ export function Gallery({ photos, albumTitle }: Props) {
                 fill
                 className="object-cover transition duration-300 group-hover:scale-105"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                {...remoteImageProps(photo.src)}
               />
               <span className="sr-only">
                 Vergroot foto {i + 1} van {albumTitle}
@@ -103,6 +105,7 @@ export function Gallery({ photos, albumTitle }: Props) {
                 className="object-contain"
                 sizes="100vw"
                 priority
+                {...remoteImageProps(photos[index].src)}
               />
             </div>
             <p className="mt-3 text-center text-lg text-cream">
