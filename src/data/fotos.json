@@ -14,7 +14,7 @@
           "alt": "Podium met lichten"
         },
         {
-          "src": "https://images.unsplash.com/photo-1429963228381-0f2dd51ca3d1?w=1200&h=800&fit=crop",
+          "src": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1200&h=800&fit=crop",
           "alt": "Concert sfeer buiten"
         },
         {
@@ -26,14 +26,14 @@
     {
       "eventId": "retro-night-2025",
       "eventTitle": "Retro Night Live",
-      "coverImage": "https://images.unsplash.com/photo-1571266028243-e4a3c8e8b0b8?w=800&h=600&fit=crop",
+      "coverImage": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&h=600&fit=crop",
       "photos": [
         {
-          "src": "https://images.unsplash.com/photo-1571266028243-e4a3c8e8b0b8?w=1200&h=800&fit=crop",
+          "src": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1200&h=800&fit=crop",
           "alt": "Retro lichtshow in de zaal"
         },
         {
-          "src": "https://images.unsplash.com/photo-1540039155733-5bb30b53aa4a?w=1200&h=800&fit=crop",
+          "src": "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=1200&h=800&fit=crop",
           "alt": "Publiek danst mee"
         },
         {
@@ -45,10 +45,10 @@
     {
       "eventId": "dorpsfeest-2025",
       "eventTitle": "Dorpsfeest Sint-Joris",
-      "coverImage": "https://images.unsplash.com/photo-1528605248644-c14be6e687e3?w=800&h=600&fit=crop",
+      "coverImage": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&h=600&fit=crop",
       "photos": [
         {
-          "src": "https://images.unsplash.com/photo-1528605248644-c14be6e687e3?w=1200&h=800&fit=crop",
+          "src": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1200&h=800&fit=crop",
           "alt": "Feest op het dorpsplein"
         },
         {

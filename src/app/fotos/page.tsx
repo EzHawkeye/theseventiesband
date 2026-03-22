@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Gallery } from "@/components/Gallery";
 import { getPhotoAlbums } from "@/lib/content";
+import {
+  albumSectionClass,
+  albumSectionFallbackClass,
+} from "./album-section-styles";
 
 export const metadata: Metadata = {
   title: "Foto’s",
@@ -39,7 +43,10 @@ export default function PhotosPage() {
           <section
             key={album.eventId}
             id={album.eventId}
-            className="scroll-mt-28"
+            className={[
+              "scroll-mt-28",
+              albumSectionClass[album.eventId] ?? albumSectionFallbackClass,
+            ].join(" ")}
             aria-labelledby={`album-${album.eventId}`}
           >
             <h2
