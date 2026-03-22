@@ -20,6 +20,10 @@ export function getEventBySlug(slug: string): EventItem | undefined {
   return getEvents().find((e) => e.slug === slug);
 }
 
+export function getEventById(id: string): EventItem | undefined {
+  return getEvents().find((e) => e.id === id);
+}
+
 export function getMembers(): BandMember[] {
   return bandledenFile.members as BandMember[];
 }

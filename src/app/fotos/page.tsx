@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import { Gallery } from "@/components/Gallery";
+import { AlbumLinkCard } from "@/components/AlbumLinkCard";
 import { getPhotoAlbums } from "@/lib/content";
-import {
-  albumSectionClass,
-  albumSectionFallbackClass,
-} from "./album-section-styles";
 
 export const metadata: Metadata = {
   title: "Foto’s",
   description:
-    "Fotogalerij van The Seventies Band, per optreden. Klik op een foto voor de lightbox.",
+    "Fotogalerij van The Seventies Band, per optreden. Open een album om alle foto’s te zien.",
 };
 
-export default function PhotosPage() {
+export default function PhotosIndexPage() {
   const albums = getPhotoAlbums();
 
   return (
@@ -22,45 +18,30 @@ export default function PhotosPage() {
           Foto’s
         </h1>
         <p className="mt-4 text-xl leading-relaxed text-ink-muted md:text-2xl">
-          Foto’s zijn gegroepeerd per optreden. Voeg nieuwe albums toe in{" "}
+          Kies een optreden om alleen die foto’s te bekijken. Nieuwe albums voeg
+          je toe in{" "}
           <code className="rounded bg-cream-dark px-2 py-0.5 text-lg text-ink">
             src/data/fotos.json
           </code>
-          . Gebruik dezelfde{" "}
+          ; gebruik dezelfde{" "}
           <code className="rounded bg-cream-dark px-2 py-0.5 text-lg text-ink">
             eventId
           </code>{" "}
           als in{" "}
           <code className="rounded bg-cream-dark px-2 py-0.5 text-lg text-ink">
             events.json
-          </code>{" "}
-          om alles aan elkaar te koppelen.
+          </code>
+          .
         </p>
       </header>
 
-      <div className="mt-14 space-y-16">
+      <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {albums.map((album) => (
-          <section
-            key={album.eventId}
-            id={album.eventId}
-            className={[
-              "scroll-mt-28",
-              albumSectionClass[album.eventId] ?? albumSectionFallbackClass,
-            ].join(" ")}
-            aria-labelledby={`album-${album.eventId}`}
-          >
-            <h2
-              id={`album-${album.eventId}`}
-              className="font-display text-3xl font-bold text-ink md:text-4xl"
-            >
-              {album.eventTitle}
-            </h2>
-            <div className="mt-8">
-              <Gallery photos={album.photos} albumTitle={album.eventTitle} />
-            </div>
-          </section>
+          <li key={album.eventId}>
+            <AlbumLinkCard album={album} />
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

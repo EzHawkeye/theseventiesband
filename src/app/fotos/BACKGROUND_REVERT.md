@@ -27,4 +27,6 @@ Verwijder daarbij de import van `albumSectionClass` (of de map) uit `page.tsx` a
 
 ## Nieuwe look (na wijziging)
 
-Zie `page.tsx`: elke `eventId` krijgt een eigen zachte tint (`mustard` / `plum` / `olive`) met border en padding binnen `albumSectionClass`.
+Zie `fotos/[eventId]/page.tsx`: het geopende album gebruikt `albumSectionClass` / `albumSectionFallbackClass` uit `album-section-styles.ts`.
+
+De overzichtspagina `fotos/page.tsx` toont alleen kaarten (geen gekleurde secties meer op één lange pagina).

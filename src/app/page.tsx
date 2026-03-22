@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AlbumLinkCard } from "@/components/AlbumLinkCard";
 import { EventCard } from "@/components/EventCard";
 import { getPhotoAlbums, getUpcomingEvents } from "@/lib/content";
 import { remoteImageProps } from "@/lib/remote-image";
@@ -91,35 +92,13 @@ export default function HomePage() {
             Foto’s van het podium
           </h2>
           <p className="mt-3 max-w-2xl text-xl text-ink-muted">
-            Sfeerbeelden per optreden. Klik op een foto om het volledige album
-            te bekijken.
+            Sfeerbeelden per optreden. Open een album om alle foto’s van dat
+            event te zien.
           </p>
           <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {albums.map((album) => (
               <li key={album.eventId}>
-                <Link
-                  href="/fotos"
-                  className="group block overflow-hidden rounded-2xl border-2 border-transparent bg-card shadow-md transition hover:border-terracotta hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-mustard"
-                >
-                  <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src={album.coverImage}
-                      alt={album.eventTitle}
-                      fill
-                      className="object-cover transition duration-300 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, 33vw"
-                      {...remoteImageProps(album.coverImage)}
-                    />
-                  </div>
-                  <div className="p-4">
-                    <p className="font-display text-xl font-bold text-ink group-hover:text-terracotta md:text-2xl">
-                      {album.eventTitle}
-                    </p>
-                    <p className="mt-1 text-lg text-terracotta">
-                      Bekijk album →
-                    </p>
-                  </div>
-                </Link>
+                <AlbumLinkCard album={album} />
               </li>
             ))}
           </ul>
