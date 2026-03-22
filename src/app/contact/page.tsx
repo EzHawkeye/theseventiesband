@@ -20,17 +20,6 @@ export default function ContactPage() {
             Wil je ons boeken voor een feest, bruiloft, bedrijfsevent of festival?
             Laat een bericht achter — we antwoorden zo snel mogelijk.
           </p>
-          <div className="mt-8 rounded-2xl border-2 border-olive/30 bg-olive/10 p-6 text-lg text-ink md:text-xl">
-            <p className="font-semibold">E-mail via Resend</p>
-            <p className="mt-2 text-ink-muted">
-              Je bericht wordt via Resend verstuurd. Lukt verzenden niet? Kijk
-              dan of <code className="text-base">RESEND_API_KEY</code> in{" "}
-              <code className="text-base">.env.local</code> klopt en of je met
-              het test-afzenderadres alleen naar je eigen Resend-e-mail mag
-              sturen — zie ook{" "}
-              <code className="text-base">.env.example</code>.
-            </p>
-          </div>
           <Link
             href="/events"
             className="mt-8 inline-flex min-h-[3.5rem] items-center justify-center rounded-xl bg-terracotta px-8 text-xl font-semibold text-white shadow transition hover:bg-terracotta-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-mustard"
