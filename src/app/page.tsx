@@ -15,13 +15,13 @@ export default function HomePage() {
           <div className="flex-1 space-y-6">
             {/* Mobiel: logo direct naast titel, meteen zichtbaar */}
             <div className="flex animate-fade-up items-start gap-4 md:hidden">
-              <div className="animate-float-soft relative h-28 w-32 shrink-0 overflow-hidden rounded-2xl border-2 border-white bg-card shadow-lg">
+              <div className="animate-float-soft relative h-36 w-[10.5rem] shrink-0 overflow-hidden rounded-3xl bg-transparent shadow-[0_12px_40px_-6px_rgba(44,36,28,0.22)] ring-1 ring-ink/10">
                 <Image
                   src="/images/logo.png"
                   alt="The New Seventies Band — logo"
                   fill
-                  className="object-contain object-center p-1.5"
-                  sizes="128px"
+                  className="object-contain object-center p-1"
+                  sizes="168px"
                   priority
                 />
               </div>
@@ -69,13 +69,13 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="animate-fade-up-delay relative hidden aspect-[2/1] w-full flex-1 overflow-hidden rounded-3xl border-4 border-white bg-cream-dark/80 shadow-2xl md:block">
+          <div className="animate-fade-up-delay relative hidden min-h-[14rem] w-full flex-1 overflow-hidden rounded-[1.75rem] bg-transparent shadow-[0_20px_50px_-12px_rgba(44,36,28,0.2)] ring-1 ring-ink/10 md:block md:aspect-[2/1] md:min-h-[16rem] lg:min-h-[18rem]">
             <Image
               src="/images/logo.png"
               alt="The New Seventies Band — logo met discoballen"
               fill
-              className="object-contain object-center p-2 md:p-3"
-              sizes="(max-width: 1024px) 400px, 45vw"
+              className="object-contain object-center p-1 md:p-2"
+              sizes="(max-width: 1024px) 420px, 48vw"
             />
           </div>
         </div>
