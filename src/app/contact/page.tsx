@@ -23,12 +23,12 @@ export default function ContactPage() {
           <div className="mt-8 rounded-2xl border-2 border-olive/30 bg-olive/10 p-6 text-lg text-ink md:text-xl">
             <p className="font-semibold">E-mail via Resend</p>
             <p className="mt-2 text-ink-muted">
-              Je bericht wordt veilig verstuurd. Optioneel kun je in{" "}
-              <code className="rounded bg-cream-dark px-2 py-0.5 text-base">
-                .env.local
-              </code>{" "}
-              een eigen ontvanger- of afzenderadres zetten (zie{" "}
-              <code className="text-base">.env.example</code>).
+              Je bericht wordt via Resend verstuurd. Lukt verzenden niet? Kijk
+              dan of <code className="text-base">RESEND_API_KEY</code> in{" "}
+              <code className="text-base">.env.local</code> klopt en of je met
+              het test-afzenderadres alleen naar je eigen Resend-e-mail mag
+              sturen — zie ook{" "}
+              <code className="text-base">.env.example</code>.
             </p>
           </div>
           <Link
